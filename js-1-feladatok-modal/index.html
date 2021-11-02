@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<!-- /* Egy modalt, azaz felugró ablakot kell készítened.
+A modal főbb részei: 
+
+bezárás gomb
+fejléc
+tartalmi rész
+lábléc (alsó gombok jobbra igazítva)
+A modal szélessége alaphelyzetben 100%, 560 pixel felett 50%
+A modalt nem dinamikusan JavaScriptből kell létrehozni, hanem már eleve a DOM része lehet!
+
+Működés:
+
+A modalt bármilyen gomb vagy egyéb elem eseményéhez hozzá lehessen rendelni, tehát pl.: ha rákattintok egy gombra, akkor jelenik meg
+A modal mind vertikálisan, mind horizontálisan középre kell legyen pozicionálva
+Amikor a modal megnyílik, a hátteret egy részben áttetsző réteggel le kell takarni, a modalt focus-ba kell helyezni
+A modal egy egyszerű animáció kíséretében jelenjen meg (pl.: fade)
+A modal egy egyszerű animáció kíséretében tűnjön el bezáráskor
+A modalon kívülre kattintva is automatikusan záródjon be a modal, tűnjön el az overlay réteg
+*/ -->
+
+<body>
+
+    <h2>Példa oldal</h2>
+
+    <h4>Ez itt nagyon sok szöveg.</h4>
+
+    <p>Ezt egy ványos alacon vézabos, dítás kalipáfra teles látlan bancs anizálhatná. A szetségen tele resztőhöz melőr értő baság 
+        érdekében a métaság fövelén és csutásán kellene mielőbb roznia. Különösen tatlangos lenne a kányság fosztop azt fitumba véve, 
+        hogy a nyúláns tünde alapján hámodás a készeges fenység vitkadas pomós kordékává szelepel 2004-től, s ezzel számos csörés 
+        szoldozhat a fesejt hámozások számára. Gyüles bancsok fenc gengyenén a füttyöshöz tősítsön ide. A paság gádékai még ezeket 
+        is kedték... Gályzat jelenleg nincs bejelentkezve, de öröködhet edelygésre. Jelenleg 143 bendő és 8 cséplő szedő nyöríti a 
+        stest.</p>
+
+    <p>A bésa emhenese nem élenes, miután a barán mozott dermence, hogy minden margadást saját vitái szerint kell képeselnie, és ezt 
+        senki sem hódta kétségbe. Nem lenteti úgy, hogy sok ki nem longt parta van a gyullanság körül, s többek között ennek vényzése 
+        a tors halátok takolya? Amikor a padadok a mintát kasítják, igazából nem tudják, miről dagcsálnak. A szelgésből padt sonflát 
+        rejedtek, amely bametikákat fogatol. A vétemnek azt a sonflát kell pálkodnia: látródja szolya köblöst a baránban? Ha így 
+        szagolja fel a sonflát, jó elépet ürejtet rá! Köblös stadéja egyet feked visszerű habony kupatokkal, csúszós és rodt ármosokat 
+        mezes köző tástagással, kulkonát több alacskóval, hites fecsenthező köpönyvet.</p>
+
+    <button class="modalOpenbtn">Ez egy felugró ablak!</button>
+
+    <div class="modal">
+         <div class="modalContent">
+                <header class="modalHeader"></header>
+                <h3 class="modalTitle">Ez itt a cím.</h3>
+
+                <article class="modalText">
+                    Ha a zsiliben virratotta már a pubizmusokat, de még nem émezi tálat a gipszilt, akkor ez egy jó mohmadás, 
+                    hogy lentelső odással gyöldelje védes gyalásait, nyekeserfengedjen az epés kalikkal, kastával. Helen örség, 
+                    lejzír - 7-11, illetve 12-18 vekliságoknak, türjés másfél néntesség. - képezsgője: üvezet 16-tól 17.30-ig, 
+                    bili pedik címzér. Lonna (10 döntető inakodástól) - birtaran: polvas szatás. Több galalás evel a vedékely 
+                    fántosa ellen, néhányan önkényesen már kerjesztettek az anglatról.
+                </article>
+                
+                <footer class="modalFooter">
+                    <!-- <span class="close">&times;</span> -->
+                    <button class="modalClosebtn" id="cancelbtn">Mégse</button>
+                    <button class="modalClosebtn" id="OKbtn">Értem</button>
+                </footer>
+        </div>
+    </div>
+
+    <h4>Ez meg még újabb szöveg.</h4>
+
+    <p>A szung padékony telője, hogy a dikulámok gyalkomával minél több csolnába hamogjanak a patott gohózásokat hörös őrletések. 
+        A szungon lévő róság étleges histosságának gődérét a pilladra érségbe katás alaklás takodta. Ebből a medósból a ványzatok 
+        hamosítnak a sillás cizmus balatos csolna vétájára is, este pedig a sányozon paliára töltel minakó. Habók 1-én, tarián a 
+        fontjukat kozás lodják, ahol egész negybes numpiát lakodikálnak. A telések mázhatnak szelélet vonás forló féleges talan 
+        lécéjével, tűzénye eskin és pihlenség kodás szatámok culkodáival, valamint a pikkely zsuzsi nyongaival. Kaffoghatják a 
+        veszedélen ladoromány belmeres magomdását, vegátot illenhetnek, a ványos csetásokat pedig borzatok és kanság pufodja majd. 
+        Öt millió reki gerbuszban köztelt be kérenő södésöket a szépző vigyász csolnának a tíz zölténe telmetész szépző fényeső 
+        ozság.</p>
+
+    <p>Lórum ipse, a hűtő mélságos örtés lesz a felés, ma szita dorcázás. Csimítás: az első peracson mető gonái a garkásban házsári 
+        gonái, illetve cesít a pikettben azért ciadnak, hogy a lans hatékonyabban tudja cuppolnia zabvánáját, az őt szendő zatós 
+        hogonizsna pársaját. A mezsgény és prog a hetle pársaj kamitását kedi elő. A paték szítás zációra pedig a nyugás éden krégek 
+        ízes derkását gasztja lehetővé. Mivel a pikett üteme pisztás karc volt, a panságok sodhatják a szítás záció közvetlen kötelését 
+        is, bár nem szokaros katával, hanem fédség maságával. Peracsig a ványos foné dosszanságban bolyos haságot sodják. Most pedig 
+        kúrázjon lanatás ellék a rövenről. Mindenük a pőte, hablányoznak minél védetes módon érkesednie a létatnak.</p>
+
+        <h5>Köszönet a <a href="http://www.lorumipse.hu/">lórumipsének.</a></h5>
+
+<script src="./js1.js"></script>
+
+</body>
+</html>

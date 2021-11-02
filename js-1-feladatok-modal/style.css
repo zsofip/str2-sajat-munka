@@ -1,0 +1,105 @@
+
+
+/* Egy modalt, azaz felugró ablakot kell készítened.
+A modal főbb részei: 
+
+bezárás gomb x
+fejléc x
+tartalmi rész x
+lábléc (alsó gombok jobbra igazítva) x
+A modal szélessége alaphelyzetben 100%, 560 pixel felett 50% x
+A modalt nem dinamikusan JavaScriptből kell létrehozni, hanem már eleve a DOM része lehet!
+
+Működés:
+
+A modalt bármilyen gomb vagy egyéb elem eseményéhez hozzá lehessen rendelni, tehát pl.: ha rákattintok egy gombra, akkor jelenik meg x
+A modal mind vertikálisan, mind horizontálisan középre kell legyen pozicionálva x
+Amikor a modal megnyílik, a hátteret egy részben áttetsző réteggel le kell takarni, a modalt focus-ba kell helyezni x
+A modal egy egyszerű animáció kíséretében jelenjen meg (pl.: fade) x
+A modal egy egyszerű animáció kíséretében tűnjön el bezáráskor
+A modalon kívülre kattintva is automatikusan záródjon be a modal, tűnjön el az overlay réteg x
+*/
+
+.modalOpenbtn {
+    background-color: rgb(230, 126, 126);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(216, 183, 183, 0.8);
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.5s;
+    animation-name: fadeIn;
+    animation-duration: 0.5s; 
+} 
+
+.modalContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    outline: solid 0.01rem;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.5s;
+    animation-name: fadeIn;
+    animation-duration: 0.5s; 
+}
+
+@media screen and (min-width: 560px) {
+    .modalContent {
+      width: 50%;
+    }
+  }
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+
+.modalClosebtn {
+    float: right;
+    width: 3.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    border-radius: 0.25rem;
+}
+
+#cancelbtn {
+    background-color: red;
+}
+
+#OKbtn {
+    background-color: rgb(12, 199, 12);
+}
+
+.modalHeader {
+    padding: 2px 16px;
+    color: black;
+}
+
+.modalText {
+    padding: 2px 16px;
+}
+
+.modalFooter {
+    padding: 2px 16px;
+}
+
+	
+
