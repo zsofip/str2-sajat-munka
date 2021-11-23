@@ -1,0 +1,51 @@
+body {
+    background-color: aqua;
+    color: whitesmoke;
+}
+
+header {
+    padding: 15px;
+    color: mediumvioletred;
+    text-align: center;
+    text-shadow: 2px 5px 5px violet;
+}
+
+.container {
+    display: grid;
+    grid-template-columns:  150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+    margin: auto;
+    width: 50%;
+    justify-content: center;
+}
+
+.cell {
+    background-color: darkcyan;
+    border: 1px solid white;
+    padding: 60px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.cell:hover {
+    box-shadow: 1px 1px 10px 10px aqua inset;
+}
+
+.message {
+    margin: 30px;
+    text-align: center;
+    color: mediumvioletred;
+    font-size: x-large;
+    font-weight: bold;
+    text-shadow: 2px 5px 5px violet;
+}
+
+button {
+    display: block;
+    margin: auto;
+    width: 100px;
+    font-size: 20px;
+    padding: 5px;
+    background-color: mediumvioletred;
+    cursor: pointer;
+}
