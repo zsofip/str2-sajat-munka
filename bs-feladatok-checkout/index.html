@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/6bc455be0f.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Checkout</title>
+</head>
+
+<!-- Készítsd el Bootstrap segítségével a képen látható formot.
+sm töréspontig az elrendezés az alábbiak szerint alakul: sm töréspont felett pedig:
+A country mezőnél kettő országot kell felvenni: USA, Magyarország.
+Amennyiben a country mező értéke USA, úgy a state mezőnél az amerikai államok nevei jelenjenek meg, 
+és azok közül lehessen választani. 
+Amennyiben az értéke Magyarország, úgy a magyarországi megyék közül lehessen választani. 
+JavaScripttel kell megoldani.
+A dizájnnak nem kell pixelpontosnak lennie!-->
+
+<body>
+<main>
+    <section class="py-5 bg-light">
+        <div class="container">           
+            <div class="row d-flex flex-row-reverse justify-content-center">
+                <div class="col-sm-3 mb-4">                   
+                    <form>
+                        <h1 class="display h4 d-flex justify-content-between"> 
+                          Your cart 
+                          <span class="badge badge-pill badge-secondary ">3</span>
+                        </h1>
+                        <ul class="list-group">
+                          <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                              <p class="mb-0 font-weight-bold">Product name</p>
+                              <span>$12</span>
+                            </div>
+                            <small class="text-muted">Brief description</small>                             
+                          </li>
+                          <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                              <p class="mb-0 font-weight-bold">Second product</p>
+                              <span>$8</span>
+                            </div>
+                              <small class="text-muted">Brief description</small>                          
+                          </li>
+                          <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                              <p class="mb-0 font-weight-bold">Third item</p>
+                              <span>$5</span>
+                            </div>
+                            <small class="text-muted">Brief description</small>                             
+                          </li>
+                          <li class="list-group-item bg-light disabled" aria-disabled="true">
+                            <div class="d-flex justify-content-between align-items-center text-info">
+                              <p class="mb-0 font-weight-bold">Promo code</p>
+                              <span>-$5</span>
+                            </div>
+                              <small class="text-info">EXAMPLECODE</small>                          
+                          </li>
+                          <li class="list-group-item ">
+                            <div class="d-flex justify-content-between align-items-center">
+                              <p class="mb-0 font-size">Total (USD)</p>
+                              <span class="font-weight-bold">$20</span>
+                            </div>                       
+                          </li>
+                        </ul>
+                        <ul class="list-group mt-3">
+                          <li class="list-group-item p-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="input-group mb-0">
+                                <input type="text" class="form-control" placeholder="Promo Code" aria-label="redeem" 
+                                aria-describedby="redeem">
+                                <div class="input-group-append">
+                                  <button class="btn btn-secondary">Redeem</button>
+                                </div>                                
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                </div>
+
+                <div class="col-sm-5">
+                    <form>
+                        <h1 class="display h4">Billing address</h1>
+                        <div class="form-row">
+                          <div class="form-group col-sm-6">
+                            <label for="inputFirstName">First name</label>
+                            <input type="text" class="form-control" id="inputFirstName">
+                          </div>
+                          <div class="form-group col-sm-6">
+                            <label for="inputLastName">Last name</label>
+                            <input type="text" class="form-control" id="inputLastName">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Username">Username</label>
+                            <div class="input-group flex-nowrap">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="addon-wrapping">@</span>
+                                </div>
+                                <input type="text" class="form-control" id="Username" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail">Email</label>
+                            <span id="emailHelp" class="text-muted">(Optional)</span>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="you@example.com">
+                          </div>                      
+                        <div class="form-group">
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress2">Address 2</label>
+                          <span id="address2Help" class="text-muted">(Optional)</span>
+                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment or suite">
+                        </div>
+                        <div class="form-row mb-3">
+                          <div class="form-group col-sm-6">
+                            <label for="inputCountry">Country</label>
+                            <select id="inputCountry" class="custom-select data-toggle="dropdown"">
+                                <option value="" selected>Choose...</option>                              
+                              </select>
+                          </div>
+                          <div class="form-group col-sm-4">
+                            <label for="inputState">State</label>
+                            <select id="inputState" class="custom-select data-toggle="dropdown"">
+                              <option value="" selected>Choose...</option>                              
+                            </select>
+                          </div>
+                          <div class="form-group col-sm-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                          </div>
+                        </div>
+                        <div class="border-top border-bottom">
+                            <div class="form-group mt-3 mb-0">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                                  <label class="form-check-label" for="gridCheck">
+                                    Shipping address is the same as my billing address
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                      Save this information for next time
+                                    </label>
+                                  </div>
+                                </div>
+                            </form>
+                        </div>
+                      <form class="mt-3">
+                        <h1 class="display h4">Payment</h1>
+                        <fieldset class="form-group">
+                          <div class="row">
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                  Credit card
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                <label class="form-check-label" for="gridRadios2">
+                                  Debit card
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                                <label class="form-check-label" for="gridRadios3">
+                                  PayPal
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>                       
+                        <div class="form-row">
+                            <div class="form-group col-sm-6">
+                                <label for="nameOnCard">Name on card</label>
+                                <input type="text" class="form-control" id="nameOnCard" aria-describedby="nameOnCardHelp">
+                                <small id="nameOnCardHelp" class="form-text text-muted">Full name as displayed on card</small>
+                              </div>
+                              <div class="form-group col-sm-6">
+                                <label for="creditCardNumber">Credit card number</label>
+                                <input type="text" class="form-control" id="creditCardNumber">
+                              </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-sm-3">
+                                <label for="Expiration">Expiration</label>
+                                <input type="text" class="form-control" id="Expiration">
+                              </div>
+                              <div class="form-group col-sm-3">
+                                <label for="CVV">CVV</label>
+                                <input type="text" class="form-control" id="CVV">
+                              </div>
+                        </div>                      
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <button type="submit" class="btn btn-primary btn-block">Continue to checkout</button>
+                          </div>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+<script src="./main.js"></script>
+</body>
+</html>
