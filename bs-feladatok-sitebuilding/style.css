@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+
+.navbar-brand {
+    font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+}
+
+.nav-link {
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+}
+
+#start a#Home:hover {
+    color: white!important;
+}
+
+a.nav-link:hover {
+    color: white!important;
+}
+
+#start #pink {
+    background-color: rgb(226, 43, 98);
+    background-image: url(./img/bg-pattern.png), linear-gradient(to right, rgb(226, 43, 58), rgba(81, 0, 128));
+}
+
+.image {
+    top: 6%;
+    transform: scale(0.875, 0.875);
+}
+
+.jumbotron {
+    background-color: rgb(253, 195, 69);
+}
+
+#photo {
+    background-color: grey;
+    background-image: url(./img/bg-cta.jpg);
+    background-size: cover;
+    filter: opacity(90%);
+}
+
+.btn {
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    font-size: medium;
+    letter-spacing: 2px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+}
+
+p,
+footer {
+    font-family: 'Mulish', Helvetica, Arial, sans-serif;
+}
+
+#newAge {
+    font-size: xx-large;
+}
+
+#buzz a img {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+}
+#photo .btn{
+    background: transparent;
+    transition: background 300ms, border 300ms;
+}
+#photo .btn:hover {
+    background: #fdcc52;
+    border: #fdcc52;
+}
+
+#heart {
+    color: rgb(240, 63, 63);
+}
+
+#friends a {
+    color: white; 
+}
+
+#twit {
+    background-color: rgb(26, 155, 214, 0.9);
+}
+
+#fb{
+    background-color: rgba(54, 54, 250, 0.9);
+}
+
+#insta {
+    background-color: rgba(240, 63, 63, 0.9);
+}
+
+#friends a:hover {
+    opacity: 100%;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fdcc52!important;
+    text-decoration: none;
+}
