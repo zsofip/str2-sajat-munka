@@ -7,21 +7,27 @@ header {
     text-align: center;
     text-shadow: 2px 2px 3px teal;
     line-height: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.8rem;
 }
 
-.grid-container {
-    display: grid;
+#timer {
+  font-size: 1.2rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    grid-template-columns: 12rem 12rem 12rem 12rem 12rem;
-    grid-template-rows: 15rem 15rem;
-    grid-gap: 10px;
+    margin: 0 100px 0 100px;
+    padding: 0 100px 0 100px;
+    gap: 10px;
 }
 
 .flip-card {
     background-color: transparent;
     width: 150px;
     height: 200px;
+    margin: 15px;
     perspective: 1000px;
   }
   
@@ -70,3 +76,5 @@ header {
     color: orange;
     text-shadow: 1px 1px 2px black, 0 0 25px red;
   }
+
+  
