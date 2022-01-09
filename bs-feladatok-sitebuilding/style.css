@@ -3,14 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
 
 .navbar-brand {
-    font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+    font-family: 'Catamaran', Helvetica, Arial, sans-serif;   
 }
 
-.nav-link {
+a.nav-link {
     font-family: 'Lato', Helvetica, Arial, sans-serif;
+    font-size: small;
 }
 
-#start a#Home:hover {
+.navbar-brand:hover {
     color: white!important;
 }
 
@@ -18,9 +19,20 @@ a.nav-link:hover {
     color: white!important;
 }
 
+html {
+    scroll-behavior: smooth;
+    transition-duration: 300ms;
+}
+
 #start #pink {
     background-color: rgb(226, 43, 98);
     background-image: url(./img/bg-pattern.png), linear-gradient(to right, rgb(226, 43, 58), rgba(81, 0, 128));
+}
+
+#pink .btn:hover {
+    background: #fdcc52;
+    border: #fdcc52;
+    transition-duration: 300ms;
 }
 
 .image {
@@ -36,7 +48,7 @@ a.nav-link:hover {
     background-color: grey;
     background-image: url(./img/bg-cta.jpg);
     background-size: cover;
-    filter: opacity(90%);
+    filter: opacity(0.9);
 }
 
 .btn {
@@ -70,11 +82,12 @@ footer {
 }
 #photo .btn{
     background: transparent;
-    transition: background 300ms, border 300ms;
+    
 }
 #photo .btn:hover {
     background: #fdcc52;
     border: #fdcc52;
+    transition-duration: 300ms;
 }
 
 #heart {
@@ -82,6 +95,7 @@ footer {
 }
 
 #friends a {
+    opacity: 90%;
     color: white; 
 }
 
