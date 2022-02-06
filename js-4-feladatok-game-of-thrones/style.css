@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    margin: 0;
+}
+
+main {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(./assets/site/mapblue.jpg);
+}
+
+aside {
+    width: 25%;
+    background-color: rgb(48, 48, 48);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button {
+    margin: 1rem;
+}
