@@ -14,6 +14,7 @@ const getUsers = async (url = '') => {
         const list = await response.json();
         users = list;
         generateUserList(users);
+        addDeleteListener();
     } catch(e) {
         console.log('Error: ', e);
     }
@@ -30,7 +31,7 @@ const generateUserList = (users = [user]) => {
 
     keys.forEach( (key) => {
         const tableHeadTh = document.createElement('th');
-        tableHeadTh.textContent = key;
+        tableHeadTh.textContent = key.toLocaleUpperCase();
         tableHeadTr.appendChild(tableHeadTh);
     });
 
@@ -44,12 +45,35 @@ const generateUserList = (users = [user]) => {
             const tableBodyTd = document.createElement('td');
             tableBodyTd.textContent = user[key];
             tableBodyTr.appendChild(tableBodyTd); 
-        });        
+        });
+        
+        const editSaveBtn = document.createElement('button');
+        editSaveBtn.className = 'btn btn-edit';
+        editSaveBtn.textContent = 'Szerkesztés';
+        tableBodyTr.appendChild(editSaveBtn);
+
+        const deleteCancelBtn = document.createElement('button');
+        deleteCancelBtn.className = 'btn btn-delete';
+        deleteCancelBtn.textContent = 'Törlés';
+        tableBodyTr.appendChild(deleteCancelBtn);
     });
 };
 
+const deleteRow = (event) => {
+    let selectedRow = event.currentTarget.parentNode;
+    let selectedUser = selectedRow.firstChild.textContent;
+    fetch(`http://localhost:3000/users/${selectedUser}`, {
+        method: 'DELETE'
+      })
+       .then(response => response.json())
+       .then(generateUserList)
+      .catch((error) => {console.error(error)})
+}
 
-
+const addDeleteListener = () => {
+    let deleteBtns = document.querySelectorAll('button.btn-delete');
+    deleteBtns.forEach(button => button.addEventListener('click', deleteRow))
+}
 
 export {
     getUsers,
